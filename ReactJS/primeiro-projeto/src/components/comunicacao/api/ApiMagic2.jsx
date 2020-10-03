@@ -51,19 +51,17 @@ export default class ApiMagic2 extends React.Component {
             </label>
             <input type="submit" value="Enviar" />
           </form>
-        </div>
-
-        <div>
-              {this.state.loading ? (
-                  <div> Loading...</div> 
-              ) : (                
-                  <div>
-                      <div>{this.state.card.data[0].name} </div>
-                      <img alt="" 
-                          src={this.state.card.data[0].image_uris.large}>
-                      </img>
-                  </div>
-              )}
+          
+            {this.state.loading ? (
+                <div> Loading...</div> 
+            ) : (                
+                <div>
+                    <div>{this.state.card.data[0].name} </div>
+                    <img alt="" 
+                        src={this.state.card.data[0].image_uris.large}>
+                    </img>
+                </div>
+            )}
         </div>
       );
     }
