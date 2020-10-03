@@ -9,7 +9,7 @@ export default (props) => {
 
     return(
         <div>
-            <div class="multi-button">
+            <div className="multi-button">
                 <button onClick={acao}>Alterar</button>
                 <button onClick={acao}>Manter</button>
             </div>

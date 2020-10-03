@@ -11,10 +11,34 @@ import Condicional from './Condicional'
 import CondicionalComIf from './CondicionalComIf'
 import Pai from './comunicacao/direta/Pai'
 import Super from './comunicacao/indireta/Super'
+import FetchRandomUser from './comunicacao/api/FetchRandomUser'
+import ApiMagic from './comunicacao/api/ApiMagic'
+import ApiMagic2 from './comunicacao/api/ApiMagic2'
 
-export default (props) => (
+export default (props) => ( 
+
     <div className="App"> 
         <HeaderFooter> Cabeçalho </HeaderFooter>
+
+        <Card titulo="Magic The Gathering - Search">
+            <div>
+                <ApiMagic2 />        
+            </div>
+        </Card>
+
+        <Card titulo="Magic The Gathering">
+            <div>
+                <h1> Card Info </h1>
+                <ApiMagic search="forest" />        
+            </div>
+        </Card>
+
+        <Card titulo="API">
+            <div>
+                <h1> Pessoa API </h1>
+                <FetchRandomUser />        
+            </div>
+        </Card>
 
         <Card titulo="Primeiro Componente" color='#011f4b'>
             <Primeiro></Primeiro>   
