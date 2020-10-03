@@ -9,7 +9,8 @@ export default class ApiMagic2 extends React.Component {
     };
 
     async searchCard() {
-        const url = "https://api.scryfall.com/cards/search?order=cmc&q=" +this.props.search;
+        console.log('buscando ' +this.state.value);
+        const url = "https://api.scryfall.com/cards/search?order=cmc&q=" +this.state.value;
         const response = await fetch(url);
         const data = await response.json();        
         this.setState({card: data, loading: false})
@@ -23,26 +24,19 @@ export default class ApiMagic2 extends React.Component {
       this.handleSubmit = this.handleSubmit.bind(this);
     }
   
-    handleChange(event) {
+    handleChange(event) {   
       this.setState({value: event.target.value});
     }
 
     handleSubmit(event) {
-      this.setState({search: this.state.value, loading: false});
+      this.searchCard()
       alert('Um nome foi enviado: ' + this.state.value);
       event.preventDefault();
-    }
-
-    async componentDidMount() {
-        const url = "https://api.scryfall.com/cards/search?order=cmc&q=" +this.props.search;
-        const response = await fetch(url);
-        const data = await response.json();        
-        this.setState({card: data, loading: false})
     }
   
     render() {
 
-      return (        
+      return ( 
         <div>          
           <form onSubmit={this.handleSubmit}> 
             <label>
@@ -52,7 +46,7 @@ export default class ApiMagic2 extends React.Component {
             <input type="submit" value="Enviar" />
           </form>
           
-            {this.state.loading ? (
+            {!this.state.loading ? (
                 <div> Loading...</div> 
             ) : (                
                 <div>

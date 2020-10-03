@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class FetchRandomUser extends React.Component {    
+export default class ApiMagic extends React.Component {    
 
     state = {
         loading: true,
