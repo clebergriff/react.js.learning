@@ -13,7 +13,7 @@ export default class ApiMagic2 extends React.Component {
         const url = "https://api.scryfall.com/cards/search?order=cmc&q=" +this.state.value;
         const response = await fetch(url);
         const data = await response.json();        
-        this.setState({card: data, loading: false})
+        this.setState({card: data, loading: true})
     };
 
     constructor(props) {
