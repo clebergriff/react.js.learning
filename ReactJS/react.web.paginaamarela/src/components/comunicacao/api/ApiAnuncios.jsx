@@ -13,7 +13,6 @@ export default class ApiAnuncios extends React.Component {
         
         const data = await response.json();
         this.setState({ anuncios: data });
-        console.log("GET " +this.state.anuncios);
     }
 
     render() {        
@@ -37,10 +36,12 @@ export default class ApiAnuncios extends React.Component {
             <div>
                 {!this.state.anuncios ? (
                     <div> 
+                        {console.log("Vazio " +this.state.anuncios)}
                         Carregando anúncios...
                     </div> 
                 ) : (
                     <div>
+                        {console.log("Carregado " +this.state.anuncios)}
                         { getAnunciosList() }
                     </div>
                 )}
