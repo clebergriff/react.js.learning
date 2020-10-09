@@ -13,24 +13,24 @@ export default class ApiAnuncios extends React.Component {
         
         const data = await response.json();
         this.setState({ anuncios: data });
+    }       
+
+    getAnunciosList() {
+        // return (
+        //     <div>
+        //         <Card titulo={this.state.anuncios.results[0].descricao}>
+        //             {this.state.anuncios.results[0].nome}
+        //         </Card>   
+        //     </div>
+        // )
+        return this.state.anuncios.results.map(anuncio => {
+            return <Card titulo={anuncio.nome}>
+                {anuncio.descricao}
+            </Card>
+        })
     }
 
-    render() {        
-
-        function getAnunciosList() {
-            return (
-                <div>
-                    <Card titulo={this.state.anuncios.results[0].descricao}>
-                        {this.state.anuncios.results[0].nome}
-                    </Card>   
-                </div>
-            )
-            // return this.state.anuncios.results.map(anuncio => {
-            //     return <Card titulo={anuncio.nome}>
-            //         {anuncio.descricao}
-            //     </Card>
-            // })
-        }
+    render() { 
 
         return (
             <div>
@@ -42,7 +42,8 @@ export default class ApiAnuncios extends React.Component {
                 ) : (
                     <div>
                         {console.log("Carregado " +this.state.anuncios)}
-                        { getAnunciosList() }
+
+                        { this.getAnunciosList() }
                     </div>
                 )}
             </div>
