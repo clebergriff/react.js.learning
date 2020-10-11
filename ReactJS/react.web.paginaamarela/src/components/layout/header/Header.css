@@ -1,0 +1,17 @@
+.SearchBox {
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+.SearchButton{
+    border: 1px solid black;
+    background-color: #ffd400;
+}
+
+.SearchButton:hover{
+    border: 3x solid black;
+}
+
+.SearchButton:active {
+    background-color: #ffffff;    
+}

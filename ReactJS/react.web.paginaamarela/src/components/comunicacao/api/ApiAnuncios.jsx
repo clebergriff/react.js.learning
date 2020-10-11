@@ -24,7 +24,7 @@ export default class ApiAnuncios extends React.Component {
         //     </div>
         // )
         return this.state.anuncios.results.map(anuncio => {
-            return <Card titulo={anuncio.nome}>
+            return <Card titulo={anuncio.nome} key={anuncio.id}>
                 {anuncio.descricao}
             </Card>
         })

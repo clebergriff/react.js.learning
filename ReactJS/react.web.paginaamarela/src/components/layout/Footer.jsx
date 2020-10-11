@@ -1,7 +1,7 @@
 import React from 'react'
-import './HeaderFooter.css'
+import './Footer.css'
 
 export default props => 
-    <div className="HeaderFooter">
+    <div className="Footer">
         <h1> {props.children} </h1>
     </div>
